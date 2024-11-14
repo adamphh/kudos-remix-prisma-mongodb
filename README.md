@@ -1,3 +1,17 @@
+# This project is https://www.prisma.io/blog/fullstack-remix-prisma-mongodb-1-7D0BfTXBmB6r
+
+# Tailwindcss
+https://tailwindcss.com/docs/guides/remix
+
+# Technologies we will use
+Throughout this series you will be using the following tools to build this application:
+- [MongoDB](https://www.mongodb.com/) as the database
+- [Prisma](https://www.prisma.io/) as your Object Document Mapper (ODM)
+- [Remix](https://remix.run/) as the React framework
+- [TailwindCSS](https://tailwindcss.com/docs/guides/remix) for styling the application
+- [AWS S3](https://aws.amazon.com/) for storing user-uploaded images
+- [Vercel](https://vercel.com/) for deploying the application
+
 # Welcome to Remix!
 
 - 📖 [Remix docs](https://remix.run/docs)
