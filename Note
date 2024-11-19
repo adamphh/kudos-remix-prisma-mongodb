@@ -1,0 +1,67 @@
+I. Build A Fullstack App with Remix, Prisma & MongoDB: Project Setup
+https://www.prisma.io/blog/fullstack-remix-prisma-mongodb-1-7D0BfTXBmB6r
+
+1. Generate the Remix application
+npx create-remix@latest [app_name]
+
+2. Set up TailwindCSS
+npm install -D tailwindcss postcss autoprefixer concurrently
+
+npx tailwindcss init -p
+
+3. Create a MongoDB instance
+
+4. Set up Prisma
+4.1. Initialize and configure Prisma
+    npm i -D prisma
+- To initialize Prisma within the project, simply run:
+    npx prisma init --datasource-provider mongodb
+
+4.2. Set your environment variable  
+
+4.3. Model the data
+- Edit file prisma/prisma.schema
+- Create a User Model
+// ./prisma/schema.prisma
+    model User {
+        id        String   @id @default(auto()) @map("_id") @db.ObjectId
+        createdAt DateTime @default(now())
+        updatedAt DateTime @updatedAt
+        email     String   @unique
+        password  String
+    }
+4.4. Push schema changes
+    npx prisma db push
+
+II. Build A Fullstack App with Remix, Prisma & MongoDB: Authentication
+https://www.prisma.io/blog/fullstack-remix-prisma-mongodb-2-ZTmOy58p4re8
+1. Set up a login route
+    - Create login route and render login form
+
+2. Create a re-usable layout component
+    - Create Components in app/conponents folder
+        + Component Layout
+        + Component form-field
+        
+    - Edit route /login (app/route/login.tsx)
+        + import Layout and FormField component to render login form
+        + modify route to use these components above to render login form
+
+3. The authentication flow
+- Install bcryptjs and @types/bcryptjs package
+    npm i bcryptjs && npm i -D @types/bcryptjs
+- There will be a series of steps to take in order to authenticate a user, with two potential pathways (sign in and sign up):
+    + The user will attempt to sign in or sign up.
+    + The form will be validated.
+    + A login or register function will be called.
+    + If logging in, the server-side code will ensure a user exists with the provided login details. If registering for an account, it will make sure an account does not already exist with the provided email.
+    + If the above steps passed, a new cookie session will be created and the user will be redirected to the home page.
+    + If a step did not pass and there was an issue, the user will be sent back to the login or register screen and an error will be displayed.
+
+- To start this off, create a folder within the app directory named utils. Here you will store any helpers, services and configuration files.
+
+- Inside that new folder, create a file named auth.server.ts where you will write your authentication and session-related methods.
+
+4. Build the register function
+
+5. Create an instance of PrismaClient

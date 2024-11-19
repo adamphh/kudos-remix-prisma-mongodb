@@ -12,6 +12,10 @@ Throughout this series you will be using the following tools to build this appli
 - [AWS S3](https://aws.amazon.com/) for storing user-uploaded images
 - [Vercel](https://vercel.com/) for deploying the application
 
+# Reference resources
+- https://blog.logrocket.com/building-full-stack-app-with-remix-prisma/
+- https://dev.to/hackmamba/building-a-full-stack-app-with-remix-prisma-and-neon-3hf0?signin=true
+
 # Welcome to Remix!
 
 - 📖 [Remix docs](https://remix.run/docs)
